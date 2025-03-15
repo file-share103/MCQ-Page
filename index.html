@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="MCQ's PDF Viewer - A web-based application for viewing PDF files related to MCQ's">
+    <meta name="theme-color" content="#1a1a2e">
+    <title>MCQ's</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://api.github.com">
+</head>
+<body>
+    <div class="sidebar-toggle" id="sidebar-toggle">
+        <div class="toggle-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="toggle-text">Files</div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>MCQ's</h1>
+            <div class="refresh-info">Last refreshed: <span id="refresh-time"></span></div>
+        </header>
+
+        <div class="main-content">
+            <div class="sidebar">
+                <div id="folders-container">
+                    <!-- Folders will be loaded here dynamically -->
+                    <div class="loading active">
+                        <div class="spinner"></div>
+                        <p>Loading folders...</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pdf-viewer">
+                <div class="pdf-controls">
+                    <div class="pdf-title">Select a PDF to view</div>
+                    <div class="zoom-controls">
+                        <button id="zoom-out" title="Zoom Out">-</button>
+                        <button id="zoom-reset" title="Reset Zoom">100%</button>
+                        <button id="zoom-in" title="Zoom In">+</button>
+                        <button id="fullscreen-toggle" title="Toggle Fullscreen"><i>⛶</i></button>
+                    </div>
+                </div>
+
+                <div class="pdf-container">
+                    <div class="iframe-container">
+                        <iframe id="pdf-frame" src="about:blank" allowfullscreen></iframe>
+                    </div>
+                    <div class="loading" id="pdf-loading">
+                        <div class="spinner"></div>
+                        <p>Loading PDF...</p>
+                        <p id="loading-status">Please wait</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <button id="text1-btn">MCQ's</button>
+            <button id="text2-btn">Commands</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('text1-btn').addEventListener('click', function() {
+            window.location.href = 'https://www.google.com';
+        });
+
+        document.getElementById('text2-btn').addEventListener('click', function() {
+            window.location.href = 'https://www.google.com';
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
